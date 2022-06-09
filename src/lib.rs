@@ -52,7 +52,7 @@ pub fn build_props(props: &serde_json::Map<String, Value>) -> String {
             res += &format!(" style = {{");
             res += &format!("{{");
             for (k, v) in value.as_object().unwrap() {
-                res += &format!(" {}={}", encodeURI(k), v.to_string());
+                res += &format!(" {}:{},", encodeURI(k), v.to_string());
             }
             res += &format!("}}");
             res += &format!("}}");
